@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Raleway Variable', sans-serif;
+  font-weight: 600;
+}
+
+@layer base {
+  body { @apply text-vbnc-gray text-lg md:text-xl lining-nums; }
+  h1, h2, h3, h4, h5, h6 { @apply font-bold leading-tight; }
+  h1 { @apply text-[40px] md:text-[48px]; }
+  h2 { @apply text-[32px] md:text-[40px]; }
+  h3 { @apply text-[32px] md:text-[40px]; }
+  details summary::-webkit-details-marker { @apply hidden; }
+  p { @apply leading-relaxed font-normal max-w-[80ch]; }
+}

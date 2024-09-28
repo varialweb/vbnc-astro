@@ -1,0 +1,169 @@
+---
+import { Image } from 'astro:assets';
+import vertigoBackground from '../images/vertigo-background.png';
+import balanceBackground from '../images/balance-background.png';
+import coreBackground from '../images/core-background.png';
+import Layout from '../layouts/Layout.astro';
+import OutlinedCircle from '../components/OutlinedCircle.astro';
+import danielOval from '../images/daniel-oval.png';
+
+const orange = 'rgb(239 114 6 / 0.5)';
+const blue = 'rgb(23 94 163 / 0.3)';
+const yellow = 'rgb(255 215 77 / 0.8)';
+---
+
+<Layout title="Restore Your Body - VBNC">
+	<main>
+		<section class="py-12 xl:py-24 relative w-screen max-w-[100vw] overflow-x-clip">
+			<p class="text-[42px] xl:text-[clamp(64px,_calc(64px_+_0.9vw),80px)] leading-normal font-semibold text-center relative z-20">
+				Restore Your Body's  <Image src="/stickman.svg" alt="" width="144" height="256" class="block xl:inline mx-auto py-4 xl:py-0 xl:w-[12.5vw]" loading="eager" /> <span class="text-[#EF7206]">Potential</span>
+			</p>
+			 <OutlinedCircle width="50vw" color={yellow} styles="-top-[50vw] -right-[35vw] xl:w-[17vw] xl:-top-[17vw] xl:-right-[8.5vw]" />
+			 <OutlinedCircle width="50vw" color={orange} styles="-bottom-[30vw] -left-[30vw] xl:w-[31vw] xl:-bottom-[13.5vw] xl:-left-[8vw]" />
+			 <OutlinedCircle width="58vw" color={blue} styles="-bottom-[60vw] -right-[30vw] xl:w-[46vw] xl:-bottom-[37.5vw] xl:-right-[10vw]" />
+		</section>
+		<section class="xl:flex py-5 xl:py-24 relative">
+			<div class="w-full xl:w-1/3 relative z-30">
+				<div class="relative">
+					<Image 
+						src={vertigoBackground}
+						alt=""
+						class="w-full"
+						loading="eager"
+					/>
+					<a href="/vertigo" class="absolute bottom-0 md:bottom-[5vw] xl:bottom-[1.6vw] w-full text-center z-40">
+						<span class=" bg-[#4E565F] text-white p-4 px-24 lg:py-5 xl:px-[20%] rounded-full uppercase text-xl lg:text-2xl font-bold shadow-[0_4px_4px_rgb(0_0_0_/_0.25)]">
+							Vertigo
+						</span>
+					</a>
+				</div>
+				<div class="px-5 py-10 xl:py-20 xl:border-b xl:border-r xl:border-[#4E565F] rounded-br-sm bg-white">
+					<p class="text-center md:max-w-[50ch] xl:max-w-[30ch] lg:text-2xl xl:text-xl md:mx-auto">
+						Battling vertigo or chronic dizziness? VBNC Physical Therapy has the tools, expertise, and strategies to help you get your life back without the use of medication.  
+					</p>
+				</div>
+			</div>
+			<div class="w-full xl:w-1/3 relative xl:mt-[3.85vw] z-30">
+				<div class="relative">
+					<Image 
+						src={balanceBackground}
+						alt=""
+						class="w-full"
+						loading="eager"
+					/>
+					<a href="/balance" class="absolute bottom-0 md:bottom-[5vw] xl:bottom-[1.6vw] w-full text-center z-40">
+						<span class=" bg-[#4E565F] text-white p-4 px-24 xl:py-5 xl:px-[20%] rounded-full uppercase text-xl xl:text-2xl font-bold shadow-[0_4px_4px_rgb(0_0_0_/_0.25)]">
+							Balance
+						</span>
+					</a>
+				</div>
+				<div class="px-5 py-10 xl:py-20 xl:border-b xl:border-l xl:border-r xl:border-[#4E565F] relative xl:-left-[1px] xl:rounded-bl-lg xl:w-[calc(100%_+_1px)] bg-white">
+					<p class="text-center md:max-w-[50ch] xl:max-w-[30ch] lg:text-2xl xl:text-xl md:mx-auto">
+						Feeling unsteady? Our exercise programs promote functionality to help you minimize fall risks and maintain your independence well into your golden years.  
+					</p>
+				</div>
+			</div>
+			<div class="w-full xl:w-1/3 relative xl:mt-[7.8vw] z-30">
+				<div class="relative">
+					<Image 
+						src={coreBackground}
+						alt=""
+						class="w-full"
+						loading="eager"
+					/>
+					<a href="/core"class="absolute bottom-0 md:bottom-[5vw] xl:bottom-[1.6vw] w-full text-center z-40">
+						<span class="bg-[#4E565F] text-white p-4 px-24 xl:py-5 xl:px-[20%] rounded-full uppercase text-xl xl:text-2xl font-bold shadow-[0_4px_4px_rgb(0_0_0_/_0.25)]">
+							Core
+						</span>
+				</a>
+				</div>
+				<div class="px-5 py-10 xl:py-20 xl:border-b xl:border-l xl:border-[#4E565F] relative xl:-left-[1px] xl:rounded-bl-lg bg-white">
+					<p class="text-center md:max-w-[50ch] xl:max-w-[30ch] lg:text-2xl xl:text-xl md:mx-auto relative">
+						Overcoming an injury or accident? Using the hidden link theory, our practice holistically supports recovery by strengthening the core instead of simply treating the pain points.  
+					</p>
+				</div>
+			</div>
+			<OutlinedCircle width="17vw" color={yellow} styles="hidden xl:block bottom-32 left-48" />
+			<OutlinedCircle width="31.25vw" color={orange} styles="hidden xl:block -bottom-48 right-64" />
+		</section>
+		<section class="px-5 py-[60px] flex flex-col items-center gap-10 bg-gradient-to-b from-[#09529A] to-[#0D76DD] text-white relative z-30">
+			<h2 class="text-center">Physical Therapy with a Personal Touch</h2>
+			<p>
+				When you are suffering from an injury or managing a chronic health condition, life can begin to feel heavy. The weight of uncertainty can often leave you feeling hopeless, as if things will never be able to go back to the way they were. This resignation is normal, but it doesn’t have to be the end of life as you know it. At VBNC Physical Therapy, we see you, we value you, and we are here to help you. With years of physical therapy experience, our team understands the challenges and obstacles you are facing and is eager to help you regain your life as much as possible. We are committed to a person-first approach and are focused on treating each individual with one-on-one support, empathy, and top strategies to support your rehabilitation. 
+				<br /><br />
+				If you’re feeling overwhelmed with your current condition, VBNC Physical Therapy is ready to provide the support you deserve. Book a free phone consultation with our physical therapist and discover how our treatment plans can help you restore your body’s potential. 
+			</p>
+			<OutlinedCircle width="40vw" color="rgb(255 255 255 / 1)" styles="-top-[24vw] -left-[24vw] xl:w-[17vw] xl:-top-[8vw] xl:-left-[8vw]" />
+		</section>
+		<section class="grid gap-10 xl:grid-cols-[4fr_6fr] xl:gap-24 max-w-[1600px] mx-auto lg:items-center px-5 py-20 xl:px-16 justify-center justify-items-center relative">
+			<Image
+				src={danielOval}
+				alt="Daniel Rojas"
+				class="rounded-[100%] shadow-inner relative z-40"
+			/>
+			<div class="grid gap-10">
+				<h2 class="text-[28px] leading-[33px] lg:text-[48px] lg:leading-[56px] font-semibold text-center">Your <span class="text-[#EF7206]">Local</span> Physical Therapist</h2>
+				<p>
+					VBNC Physical Therapy proudly opened its doors in 2021 to fill a gap in the industry and provide full one-on-one support to every patient at each appointment. The founder Daniel is deeply passionate about helping others, specifically in the areas of vestibular rehabilitation  for vertigo and balance as well as orthopedic conditions. Our team has the compassionate guidance and unmatched expertise to fully support you as you work to maximize your body's functional capabilities. 
+				</p>
+				<a href="/about" class="border border-[#EF7206] text-[#EF7206] hover:bg-[#EF7206] hover:text-white text-center px-1 lg:px-24 py-4 rounded-full lg:w-fit lg:mx-auto font-bold text-lg">
+					Meet our team
+				</a>
+			</div>
+			<OutlinedCircle color={blue} width="50vw" styles="-left-[25vw] -top-[25vw] xl:w-[17vw] xl:-left-[12vw] xl:top-[2vw] 2xl:-left-[17vw] 2xl:top-[4vw]" />
+		</section>
+		<section class="bg-gradient-to-b from-[#E35200] via-[#EF7206] to-[#F7A52B] px-5 py-[60px] lg:p-24 flex flex-col items-center gap-8 lg:gap-16 relative overflow-x-clip">
+			<h2 class="text-white text-center text-[28px] leading-[33px] lg:text-[48px] lg:leading-[56px] font-semibold">Our Values</h2>
+			<div class="bg-white rounded shadow p-5 py-12 lg:p-24 max-w-[1280px] w-full grid gap-16 lg:gap-24 justify-center relative z-40">
+				<div class="flex flex-col lg:flex-row items-center gap-5 lg:gap-12">
+					<img src="/heart.svg" alt="" width="96" height="86" class="lg:w-[160px]" />
+					<div class="flex flex-col gap-2 items-center lg:items-start">
+						<h3 class="text-lg font-semibold lg:text-2xl">Sympathy</h3>
+						<p class="text-center lg:text-left">
+							We care deeply about your personal rehabilitation journey and are here every step of the way to help guide you with compassion and kindness. It isn't always easy, but with our team by your side, your recovery becomes much more manageable.  
+						</p>
+					</div>
+				</div>
+				<div class="flex flex-col lg:flex-row items-center gap-5 lg:gap-12">
+					<img src="/shield.svg" alt="" width="96" height="86" class="lg:w-[160px]" />
+					<div class="flex flex-col gap-2 items-center lg:items-start">
+						<h3 class="text-lg font-semibold lg:text-2xl">Trust & Confidence</h3>
+						<p class="text-center lg:text-left">
+							As professionals in our field, we want to instill confidence in every person we treat. Pursuing physical therapy can feel overwhelming or even scary at times, but with our practice, you can trust that we have the skills, expertise, and tools to help you get the individualized treatment you deserve. 
+						</p>
+					</div>
+				</div>
+				<div class="flex flex-col lg:flex-row items-center gap-5 lg:gap-12">
+					<img src="/magnifying-glass.svg" alt="" width="96" height="86" class="lg:w-[160px]" />
+					<div class="flex flex-col gap-2 items-center lg:items-start">
+						<h3 class="text-lg font-semibold lg:text-2xl">Trust & Confidence</h3>
+						<p class="text-center lg:text-left">
+							Physical therapy isn't a one-size-fits-all program. Every person has unique needs and challenges, even if they are experiencing a similar condition or health concern. We use evidence, testing, analysis, and a person-centered approach to find the best treatment plan for you. From there, we can put the pieces together and find a solution based on your symptoms to help you recover as quickly as possible. 
+						</p>
+					</div>
+				</div>
+				<div class="flex flex-col lg:flex-row items-center gap-5 lg:gap-12">
+					<img src="/one-on-one.svg" alt="" width="96" height="86" class="lg:w-[160px]" />
+					<div class="flex flex-col gap-2 items-center lg:items-start">
+						<h3 class="text-lg font-semibold lg:text-2xl">One-on-One Care</h3>
+						<p class="text-center lg:text-left">
+							We recognize the value in one-on-one care during your recovery and prioritize private appointments at every step of your rehabilitation. Rather than getting passed off to a technician, you will receive a full hour of dedicated support and guidance with your physical therapist during each appointment.
+						</p>
+					</div>
+				</div>
+				<div class="flex flex-col lg:flex-row items-center gap-5 lg:gap-12">
+					<img src="/target.svg" alt="" width="96" height="86" class="lg:w-[160px]" />
+					<div class="flex flex-col gap-2 items-center lg:items-start">
+						<h3 class="text-lg font-semibold lg:text-2xl">Targeted Therapy</h3>
+						<p class="text-center lg:text-left">
+							Our practice specializes in 3 primary areas: vertigo, balance, and core. By focusing on these specialties, we are able to master these conditions and offer the best care possible to each patient.
+						</p>
+					</div>
+				</div>
+			</div>
+			<OutlinedCircle width="50vw" color="rgb(255 255 255 / 1)" styles="-top-[8vw] -right-[32vw] xl:w-[20vw] xl:-top-[1vw] xl:-right-[6vw] 2xl:-top-[8vw]" />
+			<OutlinedCircle width="50vw" color="rgb(255 255 255 / 1)" styles="top-[40%] -left-[32vw] xl:w-[20vw] xl:top-[40%] xl:-left-[15vw]" />
+			<OutlinedCircle width="60vw" color="rgb(255 255 255 / 1)" styles="-bottom-[10vw] -right-[25vw] xl:w-[30vw] xl:-bottom-[8vw] xl:-right-[8vw]" />
+		</section>
+	</main>
+</Layout>

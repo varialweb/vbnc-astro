@@ -1,0 +1,71 @@
+---
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+
+import { Image } from 'astro:assets';
+import logo from '../images/logo.png';
+import '@fontsource-variable/raleway';
+import '../styles/tailwind.css';
+import NavLinks from '../components/NavLinks.astro';
+---
+
+<!doctype html>
+<html lang="en" class="">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="grid grid-rows-[auto_1fr_auto] min-h-screen w-screen max-w-[100vw] overflow-x-clip">
+		<nav class="flex justify-between xl:grid xl:grid-cols-[auto_1fr] xl:gap-16 items-center p-4 md:p-6 md:px-8 xl:py-8 xl:px-[5vw] sticky top-0 z-50 transition">
+			<Image src={logo} alt="Home" class="w-[150px] md:w-[200px] lg:w-[12.5vw]" loading="eager" />
+			<details class="xl:hidden">
+				<summary class="list-none list-image-none">
+					<img src="/hamburger.svg" width="36" height="24" class="md:w-12" loading="eager" />
+				</summary>
+				<div class="absolute top-0 left-0 p-4 md:p-6 md:px-8 bg-white w-3/4 h-screen shadow flex flex-col gap-4 md:gap-8">
+					<Image src={logo} alt="Home" class="w-[150px] md:w-[200px] lg:w-[12.5vw]" loading="eager" />
+					<NavLinks />
+				</div>
+			</details>
+			<div class="hidden xl:block">
+				<NavLinks />
+			</div>
+		</nav>
+		<slot />
+		<footer class="bg-vbnc-gray text-white flex flex-col gap-8 p-8 items-center relative z-50">
+			<address class="text-center not-italic flex flex-col gap-1">
+				<p>VBNC Physical Therapy</p>
+				<a href="tel:3609157369">(360) 915-7369</a>
+				<p>4770 Yelm Hwy SE</p>
+				<p>Lacey, WA 98503</p>
+			</address>
+			<p>©<span class="year">2024</span> VBNC Physical Therapy, LLC <span class="hidden xl:inline">|</span><br class="xl:hidden" /> Created by <a href="https://www.varial.dev" class="text-[#87C6FF]">Varial Web Development</a></p>
+		</footer>
+	</body>
+</html>
+
+<script>
+	const nav = document.querySelector('nav')
+	const year = document.querySelector('.year')
+
+	year.innerHTML = new Date().getFullYear().toFixed(0)
+
+	window.addEventListener('scroll', event => {
+		console.log('scroll', window.scrollY)
+		if (window.scrollY > 75) {
+			nav.style.backgroundColor = 'white'
+			nav.style.boxShadow = '0 2px 1px rgb(0 0 0 / 0.1)'
+		} else {
+			nav.style.backgroundColor = 'transparent'
+			nav.style.boxShadow = 'none'
+		}
+	})
+</script>
