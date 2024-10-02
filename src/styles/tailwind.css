@@ -15,4 +15,5 @@ body {
   h3 { @apply text-[32px] md:text-[40px]; }
   details summary::-webkit-details-marker { @apply hidden; }
   p { @apply leading-relaxed font-normal max-w-[80ch]; }
+  input, textarea { @apply border w-full rounded-sm p-2; }
 }

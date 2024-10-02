@@ -6,6 +6,7 @@ import coreBackground from '../images/core-background.png';
 import Layout from '../layouts/Layout.astro';
 import OutlinedCircle from '../components/OutlinedCircle.astro';
 import danielOval from '../images/daniel-oval.png';
+import ContactForm from '../components/ContactForm.svelte';
 
 const orange = 'rgb(239 114 6 / 0.5)';
 const blue = 'rgb(23 94 163 / 0.3)';
@@ -164,6 +165,9 @@ const yellow = 'rgb(255 215 77 / 0.8)';
 			<OutlinedCircle width="50vw" color="rgb(255 255 255 / 1)" styles="-top-[8vw] -right-[32vw] xl:w-[20vw] xl:-top-[1vw] xl:-right-[6vw] 2xl:-top-[8vw]" />
 			<OutlinedCircle width="50vw" color="rgb(255 255 255 / 1)" styles="top-[40%] -left-[32vw] xl:w-[20vw] xl:top-[40%] xl:-left-[15vw]" />
 			<OutlinedCircle width="60vw" color="rgb(255 255 255 / 1)" styles="-bottom-[10vw] -right-[25vw] xl:w-[30vw] xl:-bottom-[8vw] xl:-right-[8vw]" />
+		</section>
+		<section class="grid place-items-center px-5 py-[60px] bg-gradient-to-b from-[rgba(22,92,162,1)] to-[rgba(27,113,197,1)] relative z-50">
+			<ContactForm client:load />
 		</section>
 	</main>
 </Layout>

@@ -1,0 +1,87 @@
+---
+export const prerender = false;
+
+import Mailgun from "mailgun.js"
+import FormData from "form-data"
+import Layout from "../layouts/Layout.astro";
+import ContactForm from '../components/ContactForm.svelte';
+
+if (Astro.request.method === 'POST') {
+  const form = await Astro.request.formData()
+  const mailgun = new Mailgun(FormData)
+  // @ts-ignore
+  const DOMAIN = import.meta.env.MG_DOMAIN
+  // @ts-ignore
+  const API_KEY = import.meta.env.MG_API_KEY
+  const name = form.get('name')
+  const email = form.get('email')
+  const phone = form.get('phone')
+  const comments = form.get('comments')
+
+  const now = new Date()
+  let success = false
+
+  const mg = mailgun.client({
+    username: 'api',
+    key: API_KEY,
+  })
+
+  const customerEmail = {
+    // @ts-ignore
+    from: `VBNC <${import.meta.env.MAIL_FROM}>`,
+    to: email,
+    subject: 'Contact request received',
+    html: `
+      <h1>Your contact request has been received!</h1>
+      <p>Thank you for choosing VBNC! We will be in contact with you soon.</p> 
+    `
+  }
+
+  const staffEmail = {
+    // @ts-ignore
+    from: `VBNC <${import.meta.env.MAIL_FROM}>`,
+    // @ts-ignore
+    to: import.meta.env.MAIL_TO,
+    subject: `Contact request received at ${now}`,
+    html: `
+        <p>Date: ${now}</p>
+        <p>Name: ${name}</p>
+        <p>Email: ${email}</p>
+        <p>Phone: ${phone}</p>
+        <p>Comments: ${comments}</p>
+      `
+  }
+
+  await mg.messages.create(DOMAIN, staffEmail)
+  .then(async response => {
+    if (response.status === 200) {
+      // @ts-ignore
+      await mg.messages.create(DOMAIN, customerEmail)
+      .then(async (response) => {
+        if (response.status === 200) {
+          success = true
+        }
+      })
+      .catch(error => console.error(error))
+    }
+  })
+  .catch(error => console.error(error))
+
+  if (success) {
+    return new Response(
+      JSON.stringify({ success: true })
+    )
+  } else {
+    return new Response(
+      JSON.stringify({ success: false })
+    )
+  }
+}
+
+---
+
+<Layout title="Contact Us - VBNC">
+  <section class="grid place-items-center px-5 py-[60px] bg-gradient-to-b from-[rgba(22,92,162,1)] to-[rgba(27,113,197,1)] relative z-50">
+    <ContactForm />
+  </section>
+</Layout>

@@ -59,7 +59,7 @@ import NavLinks from '../components/NavLinks.astro';
 	year.innerHTML = new Date().getFullYear().toFixed(0)
 
 	window.addEventListener('scroll', event => {
-		console.log('scroll', window.scrollY)
+		// console.log('scroll', window.scrollY)
 		if (window.scrollY > 75) {
 			nav.style.backgroundColor = 'white'
 			nav.style.boxShadow = '0 2px 1px rgb(0 0 0 / 0.1)'
@@ -67,5 +67,5 @@ import NavLinks from '../components/NavLinks.astro';
 			nav.style.backgroundColor = 'transparent'
 			nav.style.boxShadow = 'none'
 		}
-	})
+	}, { passive: true })
 </script>
